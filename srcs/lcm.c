@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   gcf.c                                            .::    .:/ .      .::   */
+/*   lcm.c                                            .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: jgambard <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/24 15:48:08 by jgambard     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/26 19:06:53 by tripouil    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/26 19:03:58 by tripouil    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,9 +29,9 @@ static long		get_result(long *numbers, int n)
 		while (++i < n)
 			if (!(numbers[i] % prime) && ++done)
 				numbers[i] /= prime;
-		if (done == n)
+		if (done)
 			result *= prime;
-		else if (!done)
+		else
 			prime = next_prime(prime + 1);
 		done = 0;
 		while (numbers[done] == 1 && ++done < n);
@@ -39,7 +39,7 @@ static long		get_result(long *numbers, int n)
 	return (result);
 }
 
-long				gcf(long n, ...)
+long				lcm(long n, ...)
 {
 	va_list		va;
 	int			i;

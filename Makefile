@@ -1,6 +1,6 @@
 NAME				= libmath.a
 INCLUDE				= libmath.h
-SRCS				= $(addprefix srcs/, factorial.c fibonacci.c is_prime.c next_prime.c power.c gcf.c gcm.c)
+SRCS				= $(addprefix srcs/, factorial.c fibonacci.c is_prime.c next_prime.c power.c gcf.c lcm.c)
 OBJS				= ${SRCS:.c=.o}
 
 CFLAGS				= -Wall -Wextra -Werror -I .

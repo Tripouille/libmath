@@ -6,7 +6,7 @@
 /*   By: jgambard <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/24 15:13:35 by jgambard     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/24 17:34:28 by jgambard    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/26 18:38:19 by tripouil    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,6 +22,6 @@ long			next_prime(long nb);
 long			factorial(long nb);
 double			power(long nb, int power);
 long			gcf(long n, ...);
-long			gcm(long n, ...);
+long			lcm(long n, ...);
 
 #endif
