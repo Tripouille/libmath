@@ -6,7 +6,7 @@
 /*   By: jgambard <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/24 15:48:08 by jgambard     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/26 19:03:58 by tripouil    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/08 13:09:41 by jgambard    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,6 +22,7 @@ static long		get_result(long *numbers, int n)
 
 	prime = 2;
 	result = 1;
+	done = 0;
 	while (done != n)
 	{
 		i = -1;
@@ -34,12 +35,13 @@ static long		get_result(long *numbers, int n)
 		else
 			prime = next_prime(prime + 1);
 		done = 0;
-		while (numbers[done] == 1 && ++done < n);
+		while ((numbers[done] == 1 || !numbers[done]) && ++done < n)
+			;
 	}
 	return (result);
 }
 
-long				lcm(long n, ...)
+long			lcm(long n, ...)
 {
 	va_list		va;
 	int			i;
